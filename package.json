@@ -1,0 +1,10 @@
+{
+  "name": "chess-coach",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A calm, interactive chess trainer powered by Stockfish.",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "node -e \"console.log('Static site ready for deployment')\""
+  }
+}

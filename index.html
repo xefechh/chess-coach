@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chess Coach is an interactive trainer that explains every move." />
+    <title>Chess Coach — Play with purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Chess Coach home"><span class="brand-mark">♞</span><span>chess<span class="brand-accent">coach</span></span></a>
+      <div class="topbar-actions"><span class="engine-status" id="engine-status"><span class="status-dot"></span>Coach ready</span><button class="icon-button" id="new-game" title="Start a new game">↻ <span>New game</span></button></div>
+    </header>
+
+    <main class="app-shell">
+      <section class="intro">
+        <p class="eyebrow">YOUR PERSONAL CHESS TRAINER</p>
+        <h1>Play with <em>purpose.</em></h1>
+        <p class="intro-copy">A thoughtful opponent that helps you understand the game, one move at a time.</p>
+      </section>
+
+      <section class="game-layout">
+        <div class="board-column">
+          <div class="player-label top-player"><span class="avatar dark">♟</span><div><strong>Coach</strong><small id="coach-thinking">Black · learning mode</small></div><span class="captured" id="black-captured"></span></div>
+          <div class="board-wrap"><div class="board" id="board" role="grid" aria-label="Chess board"></div><div class="thinking-overlay hidden" id="thinking-overlay"><span class="spinner"></span>Coach is thinking…</div></div>
+          <div class="player-label bottom-player"><span class="avatar light">♙</span><div><strong>You</strong><small>White · your turn</small></div><span class="captured" id="white-captured"></span></div>
+          <div class="board-footer"><span>White to move</span><span class="tip">Click a piece to see its legal moves</span></div>
+        </div>
+
+        <aside class="coach-panel">
+          <div class="panel-tabs"><button class="tab active" data-tab="coach">Coach <span class="live-pill">LIVE</span></button><button class="tab" data-tab="moves">Moves <span id="move-count">0</span></button></div>
+          <div class="tab-content" id="coach-tab">
+            <div class="coach-message" id="coach-message"><div class="message-icon">✦</div><div><strong>Welcome to your first lesson</strong><p>Try developing a piece toward the center. Click any white piece to begin.</p></div></div>
+            <div class="lesson-card"><div class="lesson-icon">◎</div><div><span class="card-label">TODAY'S FOCUS</span><strong id="focus-title">Control the center</strong><p id="focus-copy">Central squares give your pieces more options. Look for moves that influence e4, d4, e5, and d5.</p></div></div>
+            <div class="evaluation"><div class="eval-header"><span>POSITION EVALUATION</span><span id="eval-label">Balanced</span></div><div class="eval-bar"><div id="eval-fill"></div></div><div class="eval-scale"><span>Black</span><span>Even</span><span>White</span></div></div>
+            <button class="hint-button" id="hint-button">💡 <span>Show me a good move</span><kbd>H</kbd></button>
+          </div>
+          <div class="tab-content hidden" id="moves-tab"><div class="move-list" id="move-list"><p class="empty-state">Your moves will appear here.</p></div></div>
+          <div class="panel-footer"><span class="coach-avatar">♞</span><span>Every move is a chance to learn.</span></div>
+        </aside>
+      </section>
+      <section class="principles"><div><span>01</span><strong>Develop</strong><small>Bring pieces out early</small></div><div><span>02</span><strong>Control</strong><small>Own the center</small></div><div><span>03</span><strong>Protect</strong><small>Keep your king safe</small></div><div><span>04</span><strong>Think</strong><small>Look before you move</small></div></section>
+    </main>
+    <footer><span>Chess Coach</span><span>Built for curious players · Engine-assisted learning</span></footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
